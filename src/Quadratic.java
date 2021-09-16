@@ -12,6 +12,10 @@ public class Quadratic {
     }
 
     public static void main(String[] args) {
-        System.out.println(posequation(1,-7,12) + " " + negequation(1,-7,12));
+        System.out.println("X = " + posequation(1,-7,12) + ", X = " + negequation(1,-7,12));
+
+        System.out.println("X = " + posequation(1,3,2) + ", X = " + negequation(1,3,2));
+
+        System.out.println("X = " + posequation(1,3,2) + ", X = " + negequation(1,3,2));
     }
 }
