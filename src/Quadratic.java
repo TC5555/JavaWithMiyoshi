@@ -1,6 +1,7 @@
-public class Quadratic {
 
-    import java.util.
+import java.util.*;
+
+public class Quadratic {
 
     public static double posequation(double a, double b, double c) {
         double answer;
@@ -15,10 +16,18 @@ public class Quadratic {
     }
 
     public static void main(String[] args) {
-        double a, b, c;
+        Scanner console = new Scanner(System.in);
 
-        System.out.println(a + " " + b + " " + c);
+        System.out.print("a = ");
+        double a = console.nextDouble();
 
-        System.out.println("X = " + posequation(a,b,c) + ", X = " + negequation(a,b,c));
+        System.out.print("b = ");
+        double b = console.nextDouble();
+
+        System.out.print("c = ");
+        double c = console.nextDouble();
+
+        System.out.println(a + "x + " + b + " + " + c);
+        System.out.println("x = " + posequation(a,b,c) + ", x = " + negequation(a,b,c));
     }
 }
