@@ -9,7 +9,7 @@ public class repl {
     public static void main(String[] args) {
         int countnum = 5;
         String tocount = "Hello";
-        System.out.println(rep(tocount, 5));
+        System.out.println(rep(tocount, countnum));
 
     }
 }
