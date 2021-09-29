@@ -1,6 +1,6 @@
-import java.io.*;;
+import java.io.*;
 import java.util.*;
-
+/* This program doesn't handle excess lines or spaces properly. don't know if that was a requirement.*/
 public class wlccount {
     public static void main(String[] args)
             throws FileNotFoundException {
@@ -9,14 +9,15 @@ public class wlccount {
             while (input.hasNextLine()) {
                 String line = input.nextLine();
                 lcount++;
-                for(int i = 0; i < line.length(); i++){
-                String word = line;
                 wcount++;
-            for(int i = 0; i < word.length(); i++) {
-                ccount++;
-            }}
+                for (int i = 0; i < line.length(); i++) {
+                    char c = line.charAt(i);
+                    ccount++;
+                    if (c == ' ') {
+                        wcount++;
+                        ccount--;
+                    }
+                }
             }
-
-            System.out.println("total words = " + wcount + " total chars = " + ccount + " total lines = " + lcount );
-    }
-}
+        System.out.println("total words = " + wcount + " total chars = " + ccount + " total lines = " + lcount );
+    }}
