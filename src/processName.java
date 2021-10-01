@@ -3,16 +3,16 @@ import java.util.Scanner;
 public class processName {
         public static void main(String[] args) {
             Scanner console = new Scanner(System.in);
+
             System.out.print("enter string: ");
-            String ToReverse = console.nextLine(), Reversed = "";
+            String ToYoda = console.nextLine();
 
-            for (int i = ToReverse.length() - 1; i >= 0; i--) {
-                char c = ToReverse.charAt(i);
-                Reversed += c;
+            String[] Yodarray = ToYoda.split(" ");
+            System.out.print(Yodarray[Yodarray.length - 1] + ", ");
+
+            for (int i = 0; i < Yodarray.length - 1; i++) {
+                System.out.print(Yodarray[i] + " ");
             }
-            System.out.print("\"" + Reversed + "\"");
         }
-
-    }
-
 }
+
