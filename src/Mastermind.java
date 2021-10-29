@@ -10,8 +10,9 @@ public class Mastermind {
         while(!win) {
             System.out.println();
             System.out.print("Guess combination: ");
-            guess.insert(0, console.nextInt());
-
+            guess.delete(0, 4);
+            guess.append(console.nextInt());
+            guess.setLength(4);
             amountclose = 0;
             amountexact = 0;
             correct = true;
