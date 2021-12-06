@@ -4,7 +4,7 @@ public class TicketClass {
        this.number = number;
     }
 
-    public String toString() { return "Number " + number + " Price " + getPrice(); }
+    public String toString() { return "Number: " + number + " Price: $" + getPrice(); }
 
     public double getPrice() {
             return 0;
