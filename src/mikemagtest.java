@@ -174,17 +174,76 @@ import java.util.Scanner;
                 {
                     int amountclose = 0;
                     int amountexact = 0;
+                    boolean one = true, two = true, three = true, four = true, bre = false;
 
                     if(guess.equals(combo)) amountexact = 4;
                     else {
                         for(int i = 0; i < combo.length(); i++) {
                             if(guess.charAt(i) == combo.charAt(i)) {
-                                amountexact++;
-                            }
-                            else for(int j = 0; j < guess.length(); j++) {
-                                if (guess.charAt(i) == combo.charAt(j)) {
-                                    amountclose++;
-                                    break;
+                                switch(i) {
+                                    case 0:
+                                        if(one) {
+                                            amountexact++;
+                                            one = false;
+                                        }
+                                        break;
+                                    case 1:
+                                        if(two) {
+                                            amountexact++;
+                                            two = false;
+                                        }
+                                        break;
+                                    case 2:
+                                        if(three) {
+                                            amountexact++;
+                                            three = false;
+                                        }
+                                        break;
+                                    case 3:
+                                        if(four) {
+                                            amountexact++;
+                                            four = false;
+                                        }
+                                        break;
+                                }
+                                }}
+                            for(int i = 0; i < combo.length(); i++) {
+                            for(int j = 0; j < guess.length(); j++) {
+                                if ((guess.charAt(i) == combo.charAt(j)) && (guess.charAt(i) != combo.charAt(i))) {
+                                    switch(j) {
+                                        case 0:
+                                            if(one) {
+                                                amountclose++;
+                                                one = false;
+                                                bre = true;
+                                            }
+                                            break;
+                                        case 1:
+                                            if(two) {
+                                                amountclose++;
+                                                two = false;
+                                                bre = true;
+                                            }
+                                            break;
+                                        case 2:
+                                            if(three) {
+                                                amountclose++;
+                                                three = false;
+                                                bre = true;
+                                            }
+                                            break;
+                                        case 3:
+                                            if(four) {
+                                                amountclose++;
+                                                four = false;
+                                                bre = true;
+                                            }
+                                            break;
+                                    }
+                                    if(bre) {
+                                        bre = false;
+                                     break;
+                                    }
                                 }
                             }
                         }
