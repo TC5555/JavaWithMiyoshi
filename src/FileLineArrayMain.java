@@ -11,27 +11,22 @@ public class FileLineArrayMain {
         return Reversed;
     }
 
-    public static ArrayList<String> getRando(ArrayList<String> line) {
-        ArrayList<String> Randomized = new ArrayList<>();
-
-        Random Ran = new Random();
-        ArrayList<String> line2 = new ArrayList<>(line);
-        for(int i = 0; i < line.size(); i++) {
-            int ThisRan = Ran.nextInt(line2.size());
-            Randomized.add(line2.get(ThisRan));
-            line2.remove(ThisRan);
-        }
-        return Randomized;
-    }
 
     public static void main(String[] args)
             throws FileNotFoundException {
         Scanner input = new Scanner(new File("oldlady.txt"));
+
+        ArrayList<ArrayList<String>> LineReverse = new ArrayList<>();
+
         while (input.hasNextLine()) {
             String line = input.nextLine();
             ArrayList<String> ArrayLine = new ArrayList<>(Arrays.asList(line.split(" ")));
 
-            for(String s: ArrayLine){
+            LineReverse.add(ArrayLine);
+        }
+        for(int i = LineReverse.size() - 1; i >= 0; i--){
+            ArrayList<String> AS = new ArrayList<>(LineReverse.get(i));
+            for(String s : AS) {
                 System.out.print(s + " ");
             }
             System.out.print("\n");
@@ -48,15 +43,6 @@ public class FileLineArrayMain {
             System.out.print("\n");
         }
 
-        Scanner inputRan = new Scanner(new File("oldlady.txt"));
-        while (inputRan.hasNextLine()) {
-            String line = inputRan.nextLine();
-            ArrayList<String> ArrayLine = new ArrayList<>(Arrays.asList(line.split(" ")));
 
-            for(String s: getRando(ArrayLine)){
-                System.out.print(s + " ");
-            }
-            System.out.print("\n");
-        }
     }
 }
