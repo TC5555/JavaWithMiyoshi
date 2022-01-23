@@ -9,17 +9,16 @@ public class PointMain {
             PointClass p = new PointClass(Ran.nextInt(100), Ran.nextInt(100));
             Point.add(p); }
             System.out.println(Point.get(0) + " " + Point.get(1));
-            switch (Point.get(0).compareTo(Point.get(1))) {
-                case -1:
-                    System.out.println(Point.get(0) + " is less than " + Point.get(1));
-                    break;
-                case 1:
-                    System.out.println(Point.get(1) + " is less than " + Point.get(0));
-                    break;
-                case 0:
-                    System.out.println(Point.get(0) + " is equal to " + Point.get(1));
-                    break;
-            }
+        if (Point.get(0).compareTo(Point.get(1)) < 0) {
+            System.out.println(Point.get(0) + " is before " + Point.get(1));
         }
+        else if (Point.get(0).compareTo(Point.get(1)) > 0) {
+            System.out.println(Point.get(1) + " is before " + Point.get(0));
+        }
+        else {
+            System.out.println(Point.get(0) + " is the same coordinate as " + Point.get(1));
+        }
+
+    }
 
     }
