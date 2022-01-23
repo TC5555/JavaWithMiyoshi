@@ -1,4 +1,4 @@
-public class Cone {
+public class Cone implements ShapeInterface3d{
     double radius, height;
 
     public Cone(double radius, double height) {
