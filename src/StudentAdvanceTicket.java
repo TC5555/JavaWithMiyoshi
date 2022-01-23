@@ -3,7 +3,10 @@ public class StudentAdvanceTicket extends AdvanceTicket {
         super(number, days);
     }
     public double getPrice() {
-        return super.price/2;
+        if (days<10){
+            return 15;
+        }
+        return 20;
     }
     public String toString() {
         return super.toString() + " (ID required)";
