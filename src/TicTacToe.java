@@ -4,11 +4,11 @@ public class TicTacToe {
 
         int[][] ticb = new int[3][3];
         Scanner console = new Scanner(System.in);
-        int uh = 0, uv = 0, udr = 0, udl = 0;
-        boolean win = false, play;
+        int uh = 0, uv = 0, udr = 0, udl = 0, TieCount;
+        boolean win = false, play, tie = false;
         int input;
 
-        while(!win) {
+        while(!win || !tie) {
 
             for (int i = 0; i < ticb.length; i++) {
                 for (int j = 0; j < ticb[i].length; j++) {
@@ -68,23 +68,30 @@ public class TicTacToe {
                     break;
             }}
 
+            TieCount = 0;
+
             for (int i = 0; i < ticb.length; i++) {
                 for (int j = 0; j < ticb[i].length; j++) {
                     if(ticb[i][j] == 1) uh++;
                     if(ticb[j][i] == 1) uv++;
+                    if(ticb[i][j] == 1 || ticb[i][j] == 2) TieCount++;
                 }
                 if(ticb[i][i] == 1) udr++;
                 if(ticb[(ticb.length - 1) - i][i] == 1) udl++;
                 if (uv == 3 || uh == 3 || udr == 3 || udl == 3) {
                     System.out.println("user 1 win");
                     win = true; }
+                else if (TieCount == 9) {
+                    System.out.println("tie game");
+                    tie = true;
+                }
                 uv = 0;
                 uh = 0;
             }
             udr = 0;
             udl = 0;
 
-            if(win) break;
+            if(win || tie) break;
 
             for (int i = 0; i < ticb.length; i++) {
                 for (int j = 0; j < ticb[i].length; j++) {
