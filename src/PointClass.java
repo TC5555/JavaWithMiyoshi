@@ -8,18 +8,11 @@ public class PointClass implements Comparable<PointClass> {
     }
 
     public int compareTo(PointClass other) {
-        if (other.y > y) {
-            return -1;
+        if (y != other.y) {
+            return y - other.y;
         }
-        if (other.y < y) {
-            return 1; }
-        if (other.x > x) {
-            return -1;
-        }
-        if (other.x < x) {
-            return 1;
-        }
-        return 0;
+        else
+            return x - other.x;
     }
 
     public double distanceFromOrigin() {

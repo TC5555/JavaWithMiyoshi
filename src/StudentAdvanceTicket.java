@@ -3,7 +3,7 @@ public class StudentAdvanceTicket extends AdvanceTicket {
         super(number, days);
     }
     public double getPrice() {
-        return super.price/2;
+        return super.getPrice() / 2.0;
     }
     public String toString() {
         return super.toString() + " (ID required)";

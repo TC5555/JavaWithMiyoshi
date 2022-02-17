@@ -1,13 +1,13 @@
 public class AdvanceTicket extends TicketClass {
-    protected double price;
+    protected int days;
     public AdvanceTicket(int number, int days){
         super(number);
-        if (days<10){
-            price = 30;
-        }
-        else price = 40;
+        this.days = days;
     }
     public double getPrice() {
-        return price;
+        if (days<10){
+            return 30;
+        }
+        return 40;
     }
 }
