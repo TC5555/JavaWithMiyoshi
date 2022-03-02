@@ -19,6 +19,13 @@ public class PointMain {
             System.out.println(Point.get(0) + " is the same coordinate as " + Point.get(1));
         }
 
+        if (PointCompare.compare(Point.get(0), Point.get(1)) < 0) {
+            System.out.println(Point.get(0) + " is closer to the origin than " + Point.get(1));
+        }
+        else if (PointCompare.compare(Point.get(0), Point.get(1)) > 0) {
+            System.out.println(Point.get(1) + " is closer to the origin than " + Point.get(0));
+        }
+
     }
 
     }
