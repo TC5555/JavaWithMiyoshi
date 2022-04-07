@@ -2,8 +2,7 @@ public class IsReverse {
    public static boolean isRev(String word1, String word2){
 
       int length = word1.length();
-
-      if(length <= 1 && word1.equals(word2)){
+      if(length <= 1 && word1.equalsIgnoreCase(word2)){
          return true;
       }
 
@@ -11,7 +10,7 @@ public class IsReverse {
          return false;
       }
 
-         return Character.toUpperCase(word1.charAt(0)) == Character.toUpperCase(word2.charAt(length)) && isRev(word1.substring(1, length), word2.substring(0, length-1));
+         return Character.toUpperCase(word1.charAt(0)) == Character.toUpperCase(word2.charAt(length-1)) && isRev(word1.substring(1, length), word2.substring(0, length-1));
       }
    public static void main(String[] args){
       String word1 = "OLLEh";
