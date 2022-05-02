@@ -12,6 +12,8 @@ public class SumToMain {
 
 
     public static void main(String[] args) {
-        System.out.println(SumTo(2));
+        for(int i = 1; i <= 30; i++) {
+            System.out.println(SumTo(i));
+        }
     }
 }

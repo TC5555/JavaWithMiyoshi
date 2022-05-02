@@ -13,7 +13,9 @@ public class writeNums {
 
 
     public static void main(String[] args) {
-
-        WNums(5);
+for(int i = 1; i <= 10; i++) {
+        WNums(i);
+        System.out.println();
+}
     }
 }
